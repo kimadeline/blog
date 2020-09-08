@@ -1,0 +1,46 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "thoughts.map()"
+theme = "cactus"
+copyright = "Kim-Adeline Miguel"
+
+[params]
+    colortheme = "dark" # dark, light, white, or classic
+    description = """
+    A description here
+    """
+    mainSection = "posts"
+
+# Main menu which appears below site header.
+[[menu.main]]
+name = "🏡 Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "📚 Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "🔖 Tags"
+url = "/tags"
+weight = 3
+
+[[menu.main]]
+name = "🔮 About"
+url = "/about"
+weight = 4
+
+# Syntax highlighting
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "dracula"
+    tabWidth = 4
