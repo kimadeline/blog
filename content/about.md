@@ -9,9 +9,9 @@ Hi!
 
 I am Kim-Adeline Miguel (she/her), and this is the about page for my blog.
 
-💼 As for my day job, I am currently a software engineer at Microsoft on the [Python extension for VS Code](https://github.com/microsoft/vscode-python).
+💼 As for my day job, I am currently a software engineer at Microsoft on the [Python extension for VS Code](https://github.com/microsoft/vscode-python) team.
 
-🌌 Here are other corners of the internet where you can find me:
+🌌 Other corners of the internet where you can find me:
 
 [<i class="fab fa-github"></i> kimadeline](https://github.com/kimadeline/) <br />
 [<i class="fab fa-linkedin"></i> kimadelinemiguel](https://www.linkedin.com/in/kimadelinemiguel/) (first name last name)<br />
