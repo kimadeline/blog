@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "thoughts.map()"
+title = "An aptly named blog"
 theme = "cactus"
 copyright = "Kim-Adeline Miguel"
 
