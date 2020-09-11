@@ -11,6 +11,9 @@ copyright = "Kim-Adeline Miguel"
     """
     mainSection = "posts"
 
+[markup.goldmark.renderer]
+unsafe= true
+
 # Main menu which appears below site header.
 [[menu.main]]
 name = "🏡 Home"
