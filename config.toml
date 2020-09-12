@@ -7,9 +7,12 @@ copyright = "Kim-Adeline Miguel"
 [params]
     colortheme = "dark" # dark, light, white, or classic
     description = """
-    A description here
+👋 Hello, and welcome! I am Kim-Adeline Miguel, and this is where I experiment with writing about code 🧪 
     """
     mainSection = "posts"
+
+[markup.goldmark.renderer]
+unsafe= true
 
 # Main menu which appears below site header.
 [[menu.main]]
