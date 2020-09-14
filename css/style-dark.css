@@ -1055,6 +1055,7 @@ body {
 }
 .project-list .project-item {
   margin-bottom: 5px;
+  padding-bottom: 1em;
 }
 .project-list .project-item p {
   display: inline;
