@@ -1,0 +1,14 @@
+{
+  "list": [
+    {
+      "name":"Decoding bias and narrative in competitive video games broadcasts with video analysis",
+      "url":"https://us.pycon.org/2020/schedule/presentation/107/",
+      "desc": "🎮 Esports & OCR: In this (pre-recorded) Virtual PyCon 2020 talk I explored how I perfomed video analysis of Overwatch League games to try and see who got the most screen time, team-wise and role-wise, and what that could mean for viewers. [GitHub repo](https://github.com/kimadeline/overwatch-ocr)."
+    },
+    {
+      "name":"Back to the future: Timeless career tips for my younger self",
+      "url":"https://speakerdeck.com/kimadeline/pyladies-vancouver-career-tips-to-my-younger-self",
+      "desc":"📈 If I had known this career management advice a few years ago, I'd be a CEO (cool, efficient overlord) by now. Instead, we have this blog. I presented these 4 tips at a PyLadies meetup, I tried to be cool and efficient there. Gotta start somewhere, right? Slides only."
+    }
+  ]
+}
