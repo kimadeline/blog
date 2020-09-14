@@ -6,10 +6,14 @@ copyright = "Kim-Adeline Miguel"
 
 [params]
     colortheme = "dark" # dark, light, white, or classic
+
+  # Home page settings
     description = """
-👋 Hello, and welcome! I am Kim-Adeline Miguel, and this is where I experiment with writing about code 🧪 
+👋 Hello, and welcome! I am Kim-Adeline Miguel, and this is where I experiment with writing about code 🧪 You can also find [below](#projects) the talks I've given.
     """
     mainSection = "posts"
+  showProjectsList = true
+  projectsUrl = "https://github.com/kimadeline/talk-proposals"
 
 [markup.goldmark.renderer]
 unsafe= true
