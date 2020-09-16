@@ -15,9 +15,6 @@ copyright = "Kim-Adeline Miguel"
   showProjectsList = true
   projectsUrl = "https://github.com/kimadeline/talk-proposals"
 
-[markup.goldmark.renderer]
-unsafe= true
-
 # Main menu which appears below site header.
 [[menu.main]]
 name = "🏡 Home"
@@ -51,3 +48,9 @@ weight = 4
     noClasses = true
     style = "dracula"
     tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+  [markup.goldmark.renderer]
+    unsafe= true
