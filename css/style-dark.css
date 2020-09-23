@@ -550,7 +550,7 @@ body {
   }
 }
 .max-width {
-  max-width: 48rem;
+  max-width: 50rem;
 }
 @media (max-width: 480px) {
   .px3 {
@@ -1121,7 +1121,6 @@ article .content blockquote {
   background: inherit;
   color: #b6ffef;
   quotes: "\201C" "\201D" "\2018" "\2019";
-  font-weight: bold;
 }
 article .content blockquote p {
   margin: 0;
@@ -1512,9 +1511,11 @@ code {
   margin: 1rem 0;
   padding: 10px 15px;
   border-radius: 4px;
-  background: #212326;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #52488670;
+  background: #282a36;
   font-family: "Fira Code", monospace;
-  -webkit-border-radius: 4px;
 }
 .highlight figcaption {
   margin: -5px 0 5px;
@@ -1555,7 +1556,9 @@ code {
   color: #89dfeb;
 }
 .highlight pre {
+  display: inline-block; /* Fix no spacing on the right side when the content is too long. */
   margin: 0;
+  margin-right: 15px; /* Fix no spacing on the right side when the content is too long. */
   padding: 0;
   border: none;
   background: none;
@@ -1569,4 +1572,10 @@ code {
 }
 .highlight .line {
   height: 22px;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 13px;
+  color: #b2b2b2;
 }
