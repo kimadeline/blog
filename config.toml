@@ -9,7 +9,7 @@ copyright = "Kim-Adeline Miguel"
 
   # Home page settings
     description = """
-👋 Hello, and welcome! I am Kim-Adeline Miguel, and this is where I experiment with writing about code 🧪 You can also find [below](#projects) the talks I've given.
+👋 Hello, and welcome! I am Kim-Adeline Miguel, and this is where I experiment with writing about code 🧪 You can also find [talks](#projects) I've given further down this page.
     """
     mainSection = "posts"
   showProjectsList = true
