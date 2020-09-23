@@ -7,7 +7,7 @@ draft: false
 # Intro
 
 I had several titles in mind for this post:
-- Adding the A to RedwoodJS-style RPG (React, Prisma, GraphQL) with Azure ⚔️ (going to pin this one in a corner, just in case)
+- Adding the A to RedwoodJS-style RPG (React, Prisma, GraphQL) with Azure 🛡 (going to pin this one in a corner, just in case)
 - Taking the RedwoodJS tutorial wheels off and using an Azure database 🚲
 - RedwoodJS 🤝 Azure PostgreSQL
 - Setting up a database with RedwoodJS for noobs: Azure PostgreSQL edition 🐤
