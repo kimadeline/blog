@@ -49,8 +49,8 @@ weight = 4
     style = "dracula"
     tabWidth = 4
   [markup.tableOfContents]
-    endLevel = 4
+    endLevel = 3
     ordered = false
-    startLevel = 2
+    startLevel = 1
   [markup.goldmark.renderer]
     unsafe= true
