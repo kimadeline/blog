@@ -23,7 +23,7 @@ I had several titles in mind for this post:
 - 🥞 **full-stack**: You probably guessed it from the previous point, but Redwood allows you to write web client and API code in a single project. 
 - ☁ **serverless**: The backend code runs on serverless functions (for example, AWS Lambdas), although nothing is stopping you from using [third-party APIs](https://redwoodjs.com/cookbook/using-a-third-party-api).
 
-If you're more of a diagram person RedwoodJS looks like this (taken from their [homepage](https://redwoodjs.com/)):
+If you're more of a diagram person RedwoodJS looks like this (taken from the [homepage](https://redwoodjs.com/)):
 
 ![Structure of a deployed RedwoodJS app, with frontend and backend separation](/redwood-azure-postgresql/images/rw_structure_bgnd.png "Structure of a deployed RedwoodJS app")
 <figcaption>Structure of a deployed RedwoodJS app</figcaption>
@@ -31,7 +31,7 @@ If you're more of a diagram person RedwoodJS looks like this (taken from their [
 
 ## All your database are belong to us
 
-So far so good. All was well, so I merrily followed the tutorial, until I got to the [database section](https://redwoodjs.com/tutorial/deployment#the-database):
+So far so good. All was well, so I merrily followed the tutorial, until I reached the [database section](https://redwoodjs.com/tutorial/deployment#the-database):
 
 > **The Database**
 > <br /> <br />
@@ -39,9 +39,9 @@ So far so good. All was well, so I merrily followed the tutorial, until I got to
 
 At which point I was like, _hold on, why would I set up something on Heroku when I already have an Azure subscription? There's probably a Postgres DB service offered somewhere, no?_
 
-Turns out, there is (gasp), it's the [Azure Database for PostgreSQL](https://azure.microsoft.com/en-ca/services/postgresql/) service.
+Turns out, there is (_gasp_), it's the [Azure Database for PostgreSQL](https://azure.microsoft.com/en-ca/services/postgresql/) service.
 
-I know these are famous last words, but really, it doesn't take that much time. It's also straightforward enough that I could do it **without any pre-existing PostgreSQL—and to some extent, Azure—knowledge**.
+I know these are famous last words, but really, it doesn't take that much time. It's also straightforward enough that I could do it **without any pre-existing PostgreSQL—and to some extent Azure—knowledge**.
 
 ![Structure of a deployed RedwoodJS app, with the logo for Azure Database for PostgreSQL on the backend side](/redwood-azure-postgresql/images/rw_structure_azure.png "Structure of a deployed RedwoodJS app with an Azure Database for PostgreSQL database")
 <figcaption>Adding Azure Database for PostgreSQL into the mix</figcaption>
@@ -54,9 +54,9 @@ Here's a quick rundown of all the steps involved:
 - Make sure you have the [prerequisites](#prerequisites) within reach
 - [Create and configure](#create-and-configure-the-resource) the resource on Azure
 - [Set up](#set-up-the-database) the database
-- Pass the [`psql` connection string](#pass-the-connection-string-to-the-deploy-target) to the deploy target
+- Pass the [connection string](#pass-the-connection-string-to-the-deploy-target) to the deploy target
 
-So let's get started and plug a Postgres database hosted on Azure into our Redwood app 🔌
+So let's get started, and plug a Postgres database hosted on Azure into our Redwood app ⚡
 
 ## Prerequisites
 
@@ -70,19 +70,24 @@ Ready? Let's go!
 
 ## Create and configure the resource
 
-The Azure docs have multiple quickstart guides on how to create an Azure Database for PostgreSQL server on Azure: via the Azure portal, the Azure CLI in Azure Cloud Shell (aka in the portal or on https://shell.azure.com/), a local install of the Azure CLI, PowerShell (did you know that there is a [cross-platform](https://github.com/PowerShell/PowerShell) implementation of PowerShell?), or an Azure Resource Management template.
+The Azure docs have multiple quickstart guides on how to create an Azure Database for PostgreSQL server on Azure: 
+- via the Azure portal,
+- the Azure CLI in Azure Cloud Shell (in the portal or on https://shell.azure.com/),
+- a local install of the Azure CLI,
+- PowerShell (did you know that there is a [cross-platform](https://github.com/PowerShell/PowerShell) implementation of PowerShell?),
+- or an Azure Resource Management template.
 
-**tl;dr:** SO. MANY. OPTIONS.
+**tl;dr:** SO. MANY. OPTIONS. 😵
 
 Feel free to pick whichever route you find easiest, but for this step I will describe how to click your way through the Azure portal:
 
-- On the [Azure Portal](https://portal.azure.com), choose **Azure Database for PostgreSQL servers** from the list of all services and then **Add**.
+- On the [Azure Portal](https://portal.azure.com), choose **Azure Database for PostgreSQL servers** from the list of all services, and then **Add**.
 - Configure your service details, with 2 important points:
-   - I highly recommend you to review the **Compute + storage** section and tweak your server configuration there (storage, number of cores, redundancy). The pre-selected option is "General Purpose" which is not the cheapest one, so if you're not planning on doing anything serious with your database I would say switch to the "Basic" option.
-   - Remember your admin credentials, you will need them further down.
+   - I highly recommend you review the **Compute + storage** section, and tweak your server configuration in there (storage, number of cores, redundancy). The pre-selected option is "General Purpose" which is not the cheapest one, so if you're not planning on doing anything serious with your database I would say switch to the "Basic" option.
+   - Remember your **admin credentials**, you will need them further down.
 - Set up additional settings if you know what you're doing, and then **review + create** your server.
 
-Server creation will take a couple of minutes. Once that's done you should see something similar to this in the Azure Database for PostgreSQL servers dashboard:
+Server creation will take a couple of minutes. Once that's done you should see something similar to this in the `Azure Database for PostgreSQL servers` dashboard:
 
 ![Screenshot of the Azure Database for PostgreSQL servers dashboard with one entry named "my-fancy-server"](/redwood-azure-postgresql/images/azure-psql-dashboard.png "Screenshot of the Azure Database for PostgreSQL servers dashboard")
 <figcaption>It wears a bowtie and uses the finest electricity available 🧐</figcaption>
@@ -91,7 +96,7 @@ Once that's done we need to allow all incoming connections.
 
 > 🤔 _Waiiiiit a minute. Why do we need to do that?_
 > <br /><br />
-> Well, it depends on the deploy target. Assuming we use Netlify, the IP address of the deployed website changes for each deploy, and they don't have a public IP range that can be whitelisted (see [this thread](https://community.netlify.com/t/netlifys-ip-ranges/14167) and [that answer](https://community.netlify.com/t/list-of-netlify-ip-adresses-for-whitelisting/1338/2)). The easiest way to move past this hurdle is to allow all IPs.
+> Well, it depends on the deploy target. For example if we deploy on Netlify, the IP address of the deployed website changes for each deploy, and they don't have a public IP range that can be whitelisted (see [this thread](https://community.netlify.com/t/netlifys-ip-ranges/14167) and [that answer](https://community.netlify.com/t/list-of-netlify-ip-adresses-for-whitelisting/1338/2)). The easiest way to move past this hurdle is to allow all IPs.
 > 
 > Of course, **skip this step and use specific firewall rules if you know the IP addresses or ranges of the machines that will connect to your database**.
 
@@ -100,13 +105,13 @@ In order to allow all incoming connections, click on the server name and go to t
 ![Screenshot of the firewall rules section for the connection security settings of an Azure for PostgreSQL database](/redwood-azure-postgresql/images/firewall-rule.png "Screenshot of the firewall rules section for the connection security settings of an Azure for PostgreSQL database")
 <figcaption>Come on in everybody</figcaption>
 
-This should add an `AllowAll` firewall rule with a timestamp, something like `AllowAll_2020-9-19_17-6-6`, and then **save** your changes 💾.
+This should add an `AllowAll` firewall rule with a timestamp—something like `AllowAll_2020-9-19_17-6-6`—and then **save** your changes 💾.
 
 ## Set up the database
 
-In the previous section we created an Azure Database for PostgreSQL server, which comes with an empty database called `postgres` by default. It's pretty handy but we won't use it, instead we'll create our own database.
+In the previous section we created an Azure Database for PostgreSQL server, which comes with an empty database called `postgres` by default. It's pretty handy but we won't use it, instead we'll create our own `redwood` database.
 
-For that we will roughly follow the relevant section of the [quickstart guide](https://docs.microsoft.com/en-ca/azure/postgresql/quickstart-create-server-database-portal#connect-to-azure-database-for-postgresql-server-by-using-psql), still in the [Azure Portal](https://portal.azure.com):
+For that we will roughly follow the relevant section of the [quickstart guide](https://docs.microsoft.com/en-ca/azure/postgresql/quickstart-create-server-database-portal#connect-to-azure-database-for-postgresql-server-by-using-psql), still through the [Azure Portal](https://portal.azure.com):
 - Open the Azure Cloud Shell by clicking on the terminal-looking icon on right side of the search bar
 - Connect to your database via `psql`, using the empty `postgres` database and the admin credentials you set up when when you created the server. The command will look like this:
 
@@ -119,9 +124,9 @@ Replace all fields accordingly, and you should end up with something similar to 
 ![Screenshot of Azure Cloud Shell once authenticated in the Azure Database for PostgreSQL server on the postgres database using the psql command](/redwood-azure-postgresql/images/shell-psql-connection.png "Screenshot of Azure Cloud Shell once authenticated in the Azure Database for PostgreSQL server on the postgres database using the psql command")
 <figcaption>Note to self: server names with hyphens are somewhat ugly 🙈</figcaption>
 
-> 💡 Astute observers will notice that this connection command differs slightly from the one in the quickstart guide. Indeed, we had to add `--set=sslmode=require` because SSL connections are required. You can modify this setting for your server by going to your server dashboard > *Connection Security* > *SSL settings* > *Enforce SSL connection*. 
+> 💡 Astute observers will notice that this connection command differs slightly from the one in the quickstart guide. Indeed, we had to add `--set=sslmode=require` because SSL connections are required (_gasp<sup>2</sup>_). You can modify this setting for your server by going to your server dashboard > *Connection Security* > *SSL settings* > *Enforce SSL connection*. 
 
-Now that we're in, let's create a dedicated `redwood` database and switch connections to this newly created database:
+Now that we're in, let's create a separate `redwood` database, and switch connections to this newly created database:
 
 ```postgres
 postgres=> CREATE DATABASE redwood;
@@ -130,7 +135,7 @@ postgres=> \c redwood
 
 Optionally, you can also follow [this guide](https://docs.microsoft.com/en-us/azure/postgresql/howto-create-users#how-to-create-database-users-in-azure-database-for-postgresql) to create user accounts on the database.
 
-When you're done, type `\q` or `exit` to exit the database.
+When you're happy with the result and ready to move on, type `\q` or `exit` to close the `psql` connection.
 
 Setup time is now over, we're almost done! 
 
@@ -144,7 +149,7 @@ postgresql://<myuser>%40<myservername>:<mypassword>@<myservername>.postgres.data
 
 > 📋 A couple of notes here:
 > - The `%40` is just an encoded `@`
-> - Replace `redwood` at the end with the name of your database if necessary
+> - Replace `redwood` at the end with the name of your database if you decided to go rogue
 > - Remember to encode special characters in your password, for example with [URL encoder](https://www.urlencoder.org/)
 
 👉 Double-check whether the resulting URI is correct by using it to connect to your database using `psql`, either locally or via the Azure Cloud Shell: 
