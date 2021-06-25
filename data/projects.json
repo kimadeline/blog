@@ -38,7 +38,7 @@
     {
       "name": "Testing and deploying a weather bot with Python + Azure Bot Service",
       "url": "https://www.youtube.com/watch?v=__ian1SZm78&list=PLlrxD0HtieHhQHeS5fjSHcdMeDTBRpVrU&index=5",
-      "desc": "🤖 I didn't submit a talk for the all-virtual [PyCon 2021](https://us.pycon.org/2021/) [GitHub repo](https://github.com/kimadeline/simple-weather-bot), and instead took the opportunity to play around with Azure Bot Service and Python by deploying a small weather bot to a Slack workspace. I came up with the idea, recorded the demo and edited the video myself, which was a fun experience!"
+      "desc": "🤖 I didn't submit a talk for the all-virtual [PyCon 2021](https://us.pycon.org/2021/), and instead took the opportunity to play around with Azure Bot Service and Python by deploying a small weather bot to a Slack workspace. I came up with the idea, recorded the demo and edited the video myself, which was a fun experience! [GitHub repo](https://github.com/kimadeline/simple-weather-bot)."
     }
   ]
 }
