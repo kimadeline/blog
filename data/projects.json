@@ -3,12 +3,42 @@
     {
       "name":"Decoding bias and narrative in competitive video games broadcasts with video analysis",
       "url":"https://us.pycon.org/2020/schedule/presentation/107/",
-      "desc": "🎮 Esports & OCR: In this (pre-recorded) Virtual PyCon 2020 talk I explored how I perfomed video analysis of Overwatch League games to try and see who got the most screen time, team-wise and role-wise, and what that could mean for viewers. [GitHub repo](https://github.com/kimadeline/overwatch-ocr)."
+      "desc": "🎮 Esports & OCR: In this (pre-recorded) virtual [PyCon 2020](https://us.pycon.org/2020/) talk I explored how I perfomed video analysis of Overwatch League games to try and see who got the most screen time, team-wise and role-wise, and what that could mean for viewers. [GitHub repo](https://github.com/kimadeline/overwatch-ocr)."
     },
     {
       "name":"Back to the future: Timeless career tips for my younger self",
       "url":"https://speakerdeck.com/kimadeline/pyladies-vancouver-career-tips-to-my-younger-self",
       "desc":"📈 If I had known this career management advice a few years ago, I'd be a CEO (cool, efficient overlord) by now. Instead, we have this blog. I presented these 4 tips at a PyLadies meetup, tried to do it in a cool and efficient way. Gotta start somewhere, right? Slides only."
+    },
+    {
+      "name":"Mapping Your Career Journey",
+      "url":"https://www.youtube.com/watch?v=I26wWrXlM_I",
+      "desc":"🗺 This is the recording of my talk for the Microsoft Reactor series, which is a rebooted version of the 'Career Tips' talk above. The slides can be found [here](https://aka.ms/mapping-career-journey)."
+    },
+    {
+      "name":"Adventures in the Jamstack forest: Discovering Redwood",
+      "url":"https://aka.ms/livecoders-redwood",
+      "desc":"🌲 In this online talk I recounted my experience with contributing to RedwoodJS, starting with a quick intro of how this full-stack JAMstack framework runs, and ending with free stickers! I gave this talk as part of [The Live Coders](https://twitter.com/thelivecoders)' Twitch livestream focusing on Women in Tech. The livestream wasn't saved, slides only."
+    },
+    {
+      "name": "FSJam Podcast - Episode 11",
+      "url":"https://fsjam.org/episodes/episode-11-microsoft-open-source-with-kim-adeline-miguel",
+      "desc":"📻 While playing around with RedwoodJS I was a guest on Anthony and Chris' JAMstack-centered podcast to talk about everything and anything. We chatted about my daily tasks working on the Python extension for VS Code, TypeScript and Web Assembly. This was my first podcast ever, I was so nervous 🙈"
+    },
+    {
+      "name": "She's In Tech - Episode 3: Advice Working in Open Source",
+      "url": "https://devchat.tv/shes-in-tech/advice-working-in-open-source-shes-in-tech-003/",
+      "desc": "🎧 David Price from RedwoodJS recommended me to Tracy Lee, who hosts this podcast alongside Stacy Devino and Maria Loza. My co-guest was Deborah Kurata, a well-known and respected member of the StackOverflow community who specializes in Angular questions and has a _ton_ of open-source experience. Definitely no pressure, not at all nope. We talked about being a woman in open-source, expectations and the community."
+    },
+    {
+      "name":" ASMR in the workplace: Allies, Sponsors, Mentors and Role Models",
+      "url": "https://speakerdeck.com/kimadeline/confoo-2021-asmr-in-the-workplace",
+      "desc": "🌱 This talk debuted online at [ConFoo](https://confoo.ca/en/yul2021). There's a lot of advice floating around about mentorship, but an article I read pointed out that women don't need more mentoring, they need opportunities. Although this talk didn't explicitly focus on minorities, I explored the differences between allyship, sponsorship, mentorship and role models, peppered with examples from my own work experience. Slides only."
+    },
+    {
+      "name": "Testing and deploying a weather bot with Python + Azure Bot Service",
+      "url": "https://www.youtube.com/watch?v=__ian1SZm78&list=PLlrxD0HtieHhQHeS5fjSHcdMeDTBRpVrU&index=5",
+      "desc": "🤖 I didn't submit a talk for the all-virtual [PyCon 2021](https://us.pycon.org/2021/), and instead took the opportunity to play around with Azure Bot Service and Python by deploying a small weather bot to a Slack workspace. I came up with the idea, recorded the demo and edited the video myself, which was a fun experience! [GitHub repo](https://github.com/kimadeline/simple-weather-bot)."
     }
   ]
 }
